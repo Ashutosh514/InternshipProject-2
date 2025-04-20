@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📦 Inventory Management</h1>
+
+    <div class="stats">
+      <div class="card">📦 Total Products<br><span id="total-products">0</span></div>
+      <div class="card warning">❗ Low Stock Items<br><span id="low-stock">0</span></div>
+      <div class="card money">💲 Total Inventory Value<br><span id="total-value">$0.00</span></div>
+    </div>
+
+    <div class="btn">
+    <button onclick="showAddProduct()">+ Add Product</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="product-table">
+        <!-- Data will be inserted by JavaScript -->
+      </tbody>
+    </table>
+    <!-- Add Product Form Modal -->
+<div id="product-form-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add New Product</h2>
+      <form id="product-form">
+        <input type="text" id="name" placeholder="Product Name" required />
+        <input type="text" id="sku" placeholder="SKU" required />
+        <input type="number" id="quantity" placeholder="Quantity" required />
+        <input type="number" id="price" placeholder="Price" step="0.01" required />
+        <input type="text" id="category" placeholder="Category" />
+        <textarea id="description" placeholder="Description"></textarea>
+        <button type="submit">Add Product</button>
+        <button type="button" onclick="closeForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
